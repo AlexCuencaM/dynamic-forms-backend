@@ -3,7 +3,7 @@
     // Forms
     {
       "UpstreamPathTemplate": "/api/form/{everything}",
-      "UpstreamHttpMethod": [ "Post", "Get", "Put", "Delete" ],
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/form/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
