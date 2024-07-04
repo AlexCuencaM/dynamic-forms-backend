@@ -26,7 +26,7 @@ public class FormRepository(AppDbContext context) : IFormRepository
         };
     }
 
-    public async Task<List<FormDTO>> GetAsync(int optionId)
+    public async Task<FormDTO> GetAsync(int optionId)
     {
         var query = _context.Forms
             .Where(f => f.Id == optionId && f.IsActive);
@@ -43,7 +43,7 @@ public class FormRepository(AppDbContext context) : IFormRepository
                     FormType = fi.FormTypeData.Name,
                 }).ToList(),
             })
-            .ToListAsync();
+            .FirstAsync();
     }
     public async Task<MessageInfoDTO> PostAsync(FormDTO form)
     {

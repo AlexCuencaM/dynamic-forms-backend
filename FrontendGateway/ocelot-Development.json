@@ -2,9 +2,21 @@
   "Routes": [
     // Forms
     {
-      "UpstreamPathTemplate": "/api/Seguridad/{everything}",
-      "UpstreamHttpMethod": [ "Post", "Get", "Put" ],
-      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamPathTemplate": "/api/form/{everything}",
+      "UpstreamHttpMethod": [ "Post", "Get", "Put", "Delete" ],
+      "DownstreamPathTemplate": "/api/form/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7208
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/FormTypeData/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/FormTypeData/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

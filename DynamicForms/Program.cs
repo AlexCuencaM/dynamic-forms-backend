@@ -22,6 +22,7 @@ builder.Services.Configure<RabbitMQCredentials>(builder.Configuration.GetSection
 var optionBuilder = new DbContextOptionsBuilder<AppDbContext>();
 optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 builder.Services.AddScoped<IFormRepository, FormRepository>();
+builder.Services.AddScoped<IFormTypeDataRepository, FormTypeDataRepository>();
 builder.Services.AddSingleton(new OptionsRepository(optionBuilder.Options));
 builder.Services.AddHostedService<OptionsIdConsumer>();
 var app = builder.Build();
