@@ -38,6 +38,7 @@ public class FormRepository(AppDbContext context) : IFormRepository
                 Name = f.Name,
                 FormInputs = f.Inputs.Where(fi => fi.IsActive).Select(fi => new FormInputDTO
                 {
+                    FormInputId = fi.Id,
                     IsActive = fi.IsActive,
                     Label = fi.Label,
                     FormType = fi.FormTypeData.Name,

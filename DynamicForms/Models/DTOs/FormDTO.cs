@@ -13,6 +13,7 @@ public class FormDTO
 
 public class FormInputDTO
 {
+    public int FormId { get; set; }
     public bool IsActive { get; set; }
     public int FormInputId { get; set; }
     public string Label { get; set; } = string.Empty;
